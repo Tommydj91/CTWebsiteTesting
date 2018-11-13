@@ -43,7 +43,7 @@ pipeline {
 stages{
 	stage('test docker'){
 		steps{
-			sh docker run hello-world
+			sh 'docker run hello-world'
 		}
 	}
 }
