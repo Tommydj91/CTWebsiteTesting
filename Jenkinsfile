@@ -52,7 +52,7 @@ stages{
 	}
 }
 post{
-	always{
+	cleanup{
 		sh 'echo "*** Removing dangling images..."'
 		sh 'docker image prune --force --filter "label=nl.computest.website.cypress.ci=1"'
 	}
