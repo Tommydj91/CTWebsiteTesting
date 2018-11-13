@@ -1,0 +1,22 @@
+{
+  "name": "CTWebsiteTesting",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Tommy de Jonge <tdejonge@computest.nl>",
+  "keywords": [],
+  "license": "ISC",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tommydj91/CTWebsiteTesting.git"
+  },
+  "scripts": {
+    "test": "npx cypress run",
+    "verify": "npx cypress verify",
+    "version": "npx cypress --version"
+  },
+  "dependencies": {
+    "cypress": "^3.1.1",
+    "cypress-cucumber-preprocessor": "^1.6.0"
+  }
+}

@@ -41,11 +41,19 @@ pipeline {
     }
   }
 stages{
-	stage('test docker'){
+	stage('build'){
 		steps{
-			sh 'docker run hello-world'
+			sh 'docker build -t tdejonge/cypress . --label "nl.computest.website.cypress.ci=1"'
 		}
 	}
+
+	stage('tests'){
+		sh 'docker run tdejonge/cypress run'
+	}
+}
+post{
+	sh 'echo "*** Removing dangling images..."'
+	sh 'docker image prune --force --filter "label=nl.computest.website.cypress.ci=1"'
 }
 
 //  stages {
