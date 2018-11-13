@@ -48,7 +48,9 @@ stages{
 	}
 
 	stage('tests'){
-		sh 'docker run tdejonge/cypress run'
+		steps{
+			sh 'docker run tdejonge/cypress run'
+		}
 	}
 }
 post{
