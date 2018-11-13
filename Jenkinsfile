@@ -52,8 +52,10 @@ stages{
 	}
 }
 post{
-	sh 'echo "*** Removing dangling images..."'
-	sh 'docker image prune --force --filter "label=nl.computest.website.cypress.ci=1"'
+	always{
+		sh 'echo "*** Removing dangling images..."'
+		sh 'docker image prune --force --filter "label=nl.computest.website.cypress.ci=1"'
+	}
 }
 
 //  stages {
